@@ -1,18 +1,15 @@
 package manualTests;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import model.Transaction;
+import utils.TestUtils;
 
 public class TransactionTest {
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-		// Parse the date string into a Date object
-		Date transaction_date = dateFormat.parse("2025-01-30");
+		Date transaction_date = TestUtils.parseDate("2025-01-30");
 
 		Transaction testTransaction = new Transaction("1234", 200.00, transaction_date);
 
