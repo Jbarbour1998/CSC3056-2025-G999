@@ -7,16 +7,15 @@ import model.Account;
 
 public class AccountTest {
 
+	public static void main(String[] args) throws Exception {
 
-		public static void main(String[] args) throws Exception {
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 
-			SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		// Parse the date string into a Date object
+		Date account_opening_date = dateFormat.parse("2024-01-30");
 
-            // Parse the date string into a Date object
-            Date account_opening_date = dateFormat.parse("2024-01-30");
-			
-			Account testAccount = new Account("1234", "Mike", "Standard", account_opening_date);
-			
-			System.out.println(testAccount);
-		}	
+		Account testAccount = new Account("1234", "Mike", "Standard", account_opening_date);
+
+		System.out.println(testAccount);
+	}
 }
