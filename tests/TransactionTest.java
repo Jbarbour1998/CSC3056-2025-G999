@@ -52,6 +52,6 @@ public class TransactionTest {
 		assert testTransaction.getAccount_number().equals(test_account_number);
 		assert testTransaction.getTransaction_amount() == (test_transaction_amount);
 		assert testTransaction.getTransaction_date().equals(test_transaction_date);
-		System.out.println("All Java aseertions in the test suite passed (none failed).");
+		System.out.println("All Java assertions in the test suite passed (none failed).");
 	}
 }

@@ -62,6 +62,6 @@ public class AccountTest {
 		assert testAccount.getUsername_of_account_holder().equals(test_username_of_account_holder);
 		assert testAccount.getAccount_type().equals(test_account_type);
 		assert testAccount.getAccount_opening_date().equals(test_account_opening_date);
-		System.out.println("All Java aseertions in the test suite passed (none failed).");
+		System.out.println("All Java assertions in the test suite passed (none failed).");
 	}
 }
