@@ -43,6 +43,8 @@ public class Transaction {
 	public String toString() {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		String formattedDate = dateFormat.format(transaction_date);
-		return account_number + ", " + transaction_amount + ", " + formattedDate;
+		return String.format("%-15s| %-15s| %-15s",   
+				account_number, transaction_amount, formattedDate);
+//		return account_number + ", " + transaction_amount + ", " + formattedDate;
 	}
 }
