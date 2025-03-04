@@ -46,7 +46,7 @@ public class RangeTest {
 
 	@Test
 	public void testConstrainValueAboveUpperBound() {
-		// Value is above the upper bound, should return the upper bound (5)
+		// Value is above the upper bound, should return the upper bound (3)
 		assertEquals("The value above the range should be constrained to the upper bound.", 3.0,
 				rangeObjectUnderTestForConstrain.constrain(6.0), 0.000000001d);
 	}
@@ -245,25 +245,34 @@ public class RangeTest {
 
 	@Test
 	public void testExpandInvalidLowerMargin() {
-		Range range = new Range(10, 20);
-		assertThrows(IllegalArgumentException.class, () -> {
-			Range.expand(range, -1.2, 0.1);
-		});
+	    try {
+	        Range range = new Range(10, 20);
+	        Range.expand(range, -1.2, 0.1);
+	        fail("Expected IllegalArgumentException was not thrown.");
+	    } catch (IllegalArgumentException e) {
+	        assertTrue(true);
+	    }
 	}
 
 	@Test
 	public void testExpandInvalidUpperMargin() {
-		Range range = new Range(10, 20);
-		assertThrows(IllegalArgumentException.class, () -> {
-			Range.expand(range, 0.2, -1.1);
-		});
+	    try {
+	        Range range = new Range(10, 20);
+	        Range.expand(range, 0.2, -1.1);
+	        fail("Expected IllegalArgumentException was not thrown.");
+	    } catch (IllegalArgumentException e) {
+	        assertTrue(true);
+	    }
 	}
-
+	
 	@Test
 	public void testExpandNullRange() {
-		assertThrows(IllegalArgumentException.class, () -> {
-			Range.expand(null, 0.25, 0.5);
-		});
+	    try {
+	        Range.expand(null, 0.25, 0.5);
+	        fail("Expected IllegalArgumentException was not thrown.");
+	    } catch (IllegalArgumentException e) {
+	        assertTrue(true);
+	    }
 	}
 
 	//////////////////
