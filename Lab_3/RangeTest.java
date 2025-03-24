@@ -556,13 +556,13 @@ public class RangeTest {
 	//////////////////////////
 
 	@Test
-	public void testCentralValueValidPositiveRange() {
+	public void testGetCentralValueValidPositiveRange() {
 		Range range = new Range(2, 10);
 		assertEquals(6, range.getCentralValue(), 0.0001);
 	}
 
 	@Test
-	public void testCentralValueValidNegativeRange() {
+	public void testGetCentralValueValidNegativeRange() {
 		Range range = new Range(-8, -4);
 		assertEquals(-6, range.getCentralValue(), 0.0001);
 	}
@@ -597,6 +597,30 @@ public class RangeTest {
 		} catch (IllegalArgumentException e) {
 			assertTrue(true);
 		}
+	}
+
+	/////////////
+	// 10. equals()
+	/////////////
+	@Test
+	public void testEqualRanges() {
+		Range range1 = new Range(5, 10);
+		Range range2 = new Range(5, 10);
+		assertTrue(range1.equals(range2));
+	}
+
+	@Test
+	public void testEqualsWithDifferentUpperBounds() {
+		Range range1 = new Range(5, 10);
+		Range range2 = new Range(5, 15);
+		assertFalse(range1.equals(range2));
+	}
+
+	@Test
+	public void testEqualsWithDifferentLowerBounds() {
+		Range range1 = new Range(5, 10);
+		Range range2 = new Range(6, 10);
+		assertFalse(range1.equals(range2));
 	}
 
 }
