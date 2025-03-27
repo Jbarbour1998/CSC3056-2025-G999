@@ -373,7 +373,7 @@ public class RangeTest {
 	}
 
 	@Test
-	public void testCombine_FirstContainsSecond() {
+	public void testCombineFirstContainsSecond() {
 		Range range1 = new Range(1, 10);
 		Range range2 = new Range(3, 7);
 		Range result = Range.combine(range1, range2);
@@ -381,7 +381,7 @@ public class RangeTest {
 	}
 
 	@Test
-	public void testCombine_SecondContainsFirst() {
+	public void testCombineSecondContainsFirst() {
 		Range range1 = new Range(3, 7);
 		Range range2 = new Range(1, 10);
 		Range result = Range.combine(range1, range2);
@@ -389,7 +389,7 @@ public class RangeTest {
 	}
 
 	@Test
-	public void testCombine_IdenticalRanges() {
+	public void testCombineIdenticalRanges() {
 		Range range1 = new Range(4, 12);
 		Range range2 = new Range(4, 12);
 		Range result = Range.combine(range1, range2);
@@ -397,7 +397,7 @@ public class RangeTest {
 	}
 
 	@Test
-	public void testCombine_ZeroLengthRange() {
+	public void testCombineZeroLengthRange() {
 		Range range1 = new Range(7, 7);
 		Range range2 = new Range(3, 7);
 		Range result = Range.combine(range1, range2);
@@ -405,7 +405,7 @@ public class RangeTest {
 	}
 
 	@Test
-	public void testCombine_NegativeValues() {
+	public void testCombineNegativeValues() {
 		Range range1 = new Range(-3, -2);
 		Range range2 = new Range(1, 3);
 		Range result = Range.combine(range1, range2);
